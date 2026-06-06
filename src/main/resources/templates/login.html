@@ -59,5 +59,9 @@
         </div>
     </div>
 </div>
+
+<footer class="text-center text-muted py-3 mt-4 border-top">
+    <p th:text="${'실습 수행 일시: ' + #temporals.format(#temporals.createNow(), 'yyyy년 MM월 dd일 (E) a hh:mm:ss', T(java.util.Locale).KOREAN) + '  │  학번: 2171245  │  성명: 민찬혁'}"></p>
+</footer>
 </body>
 </html>
