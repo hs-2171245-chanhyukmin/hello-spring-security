@@ -42,6 +42,11 @@ public class AuthController {
         return "redirect:/login?registered";
     }
 
+    @GetMapping("/access-denied")
+    public String accessDenied() {
+        return "access-denied";
+    }
+
     @GetMapping("/user/password")
     public String passwordForm(Model model) {
         model.addAttribute("passwordChangeDto", new PasswordChangeDto());
