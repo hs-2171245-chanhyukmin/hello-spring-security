@@ -30,10 +30,10 @@
             <ul class="navbar-nav me-auto">
                 <li class="nav-item"><a class="nav-link" th:href="@{/home}">홈</a></li>
                 <li class="nav-item"><a class="nav-link active" th:href="@{/products}">상품 목록</a></li>
-                <li class="nav-item" sec:authorize="hasRole('ADMIN')">
+                <li class="nav-item">
                     <a class="nav-link" th:href="@{/products/add}">상품 등록</a>
                 </li>
-                <li class="nav-item" sec:authorize="hasRole('ADMIN')">
+                <li class="nav-item">
                     <a class="nav-link" th:href="@{/admin/dashboard}">관리자</a>
                 </li>
             </ul>
@@ -53,8 +53,7 @@
                        / <span th:text="${productPage.totalPages}"></span>)
             </small>
         </div>
-        <a th:href="@{/products/add}" class="btn btn-danger btn-sm px-4 fw-semibold"
-           sec:authorize="hasRole('ADMIN')">+ 상품 등록</a>
+        <a th:href="@{/products/add}" class="btn btn-danger btn-sm px-4 fw-semibold">+ 상품 등록</a>
     </div>
 
     <form th:action="@{/products}" method="get" class="mb-3 d-flex gap-2">
@@ -108,7 +107,6 @@
                                     <a th:href="@{/products/{id}/edit(id=${p.id})}"
                                        class="btn btn-outline-primary btn-sm">수정</a>
                                     <form th:action="@{/products/{id}/delete(id=${p.id})}" method="post"
-                                          sec:authorize="hasRole('ADMIN')"
                                           onsubmit="return confirm('삭제하시겠습니까?')">
                                         <button class="btn btn-outline-danger btn-sm">삭제</button>
                                     </form>

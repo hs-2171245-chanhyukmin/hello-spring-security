@@ -28,10 +28,10 @@
             <ul class="navbar-nav me-auto">
                 <li class="nav-item"><a class="nav-link active" th:href="@{/home}">홈</a></li>
                 <li class="nav-item"><a class="nav-link" th:href="@{/products}">상품 목록</a></li>
-                <li class="nav-item" sec:authorize="hasRole('ADMIN')">
+                <li class="nav-item">
                     <a class="nav-link" th:href="@{/products/add}">상품 등록</a>
                 </li>
-                <li class="nav-item" sec:authorize="hasRole('ADMIN')">
+                <li class="nav-item">
                     <a class="nav-link" th:href="@{/admin/dashboard}">관리자</a>
                 </li>
             </ul>
@@ -69,14 +69,14 @@
                 <a th:href="@{/products}" class="btn btn-primary btn-sm mt-auto">바로가기</a>
             </div>
         </div>
-        <div class="col-md-4" sec:authorize="hasRole('ADMIN')">
+        <div class="col-md-4">
             <div class="card stat-card p-4 h-100">
                 <h6 class="fw-bold">상품 등록</h6>
                 <p class="text-muted small mb-3">새 상품을 등록합니다. (관리자 전용)</p>
                 <a th:href="@{/products/add}" class="btn btn-success btn-sm mt-auto">바로가기</a>
             </div>
         </div>
-        <div class="col-md-4" sec:authorize="hasRole('ADMIN')">
+        <div class="col-md-4">
             <div class="card stat-card p-4 h-100">
                 <h6 class="fw-bold">관리자 대시보드</h6>
                 <p class="text-muted small mb-3">시스템 관리 메뉴입니다. (관리자 전용)</p>
